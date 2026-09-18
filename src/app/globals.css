@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+:root {
+  --background: #040404;
+  --foreground: #f5f5f5;
+  --gold-shine: #facc15;
+  --gold-deep: #ca8a04;
+  --bronze-bg: #1c1510;
+  --bronze-border: #38281d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: #040404;
+  color: #f5f5f5;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  touch-action: manipulation;
+}
+
+/* Pink-Gold Shine Gradient Utility */
+.bg-pink-gold {
+  background: linear-gradient(135deg, #f43f5e 0%, #fb7185 35%, #f59e0b 70%, #facc15 100%);
+}
+
+.text-pink-gold {
+  background: linear-gradient(135deg, #f43f5e 0%, #fb7185 30%, #f59e0b 70%, #facc15 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-shine {
+  background: linear-gradient(135deg, #fef08a 0%, #facc15 40%, #eab308 70%, #ca8a04 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gold glow and border shine */
+.gold-border-glow {
+  border: 1px solid rgba(250, 204, 21, 0.35);
+  box-shadow: 0 0 25px -5px rgba(234, 179, 8, 0.15);
+}
+
+.gold-glow-subtle {
+  background: radial-gradient(circle at 50% 30%, rgba(250, 204, 21, 0.08) 0%, transparent 70%);
+}
+
+/* Brown & Bronze Luxury Glass Panel */
+.bronze-panel {
+  background: rgba(26, 19, 14, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(88, 62, 43, 0.55);
+}
+
+/* Seamless Image Vignette Mask: blends images smoothly into #040404 true black */
+.hero-image-blend {
+  mask-image: radial-gradient(ellipse at center 45%, black 40%, rgba(0, 0, 0, 0.7) 65%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse at center 45%, black 40%, rgba(0, 0, 0, 0.7) 65%, transparent 95%);
+}
+
+.hero-edge-fade-bottom {
+  background: linear-gradient(to top, #040404 10%, rgba(4, 4, 4, 0.8) 40%, transparent 100%);
+}
+
+.hero-edge-fade-left {
+  background: linear-gradient(to right, #040404 0%, rgba(4, 4, 4, 0.6) 30%, transparent 100%);
+}
+
+/* Safe area insets for mobile edge-to-edge */
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+/* Dotted Matrix Background Patterns */
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-dot-pattern-dense {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.bg-dot-pattern-zinc {
+  background-image: radial-gradient(rgba(161, 161, 170, 0.08) 1.2px, transparent 1.2px);
+  background-size: 20px 20px;
+}
+
+/* Hide scrollbar for mobile carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
